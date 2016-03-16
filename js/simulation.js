@@ -175,5 +175,6 @@ timeStep = function() {
   $("#interactions").text(interactions);
   $("#possible").text(possible);
   $("#percentage").text(percentage);
+}
 
 });
