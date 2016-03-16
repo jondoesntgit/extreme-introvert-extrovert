@@ -1,4 +1,3 @@
-
 <!DOCTYPE>
 
 <html>
@@ -28,7 +27,28 @@
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 999;
+        z-index: 500;
+      }
+
+      #input {
+
+        width: 250px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 700;
+        clear: both;
+      }
+
+      #stats {
+        padding-top:130px;
+        display:none;
+      }
+
+      #explain {
+        padding-top:130px;
+        display:block;
       }
 
       h1 {
@@ -42,16 +62,36 @@
   </head>
 
   <body>
+    <div id="input">
     <h1>Interactions between extreme introverts and extroverts</h1>
+      Extroverts:<input type="text" id="extroverts"></input>
+      Introverts:<input type="text" id="introverts"></input><br/>
+      Allow extro-extro interactions:<input type="checkbox" id="extro-extro"></input><br/>
+      <button onClick="initialize()">Initialize</button> <br/>
+    </div>
     <div id="stats">
-        Active Interactions: <span id="interactions">0</span><br/>
-        Potential Interactions: <span id="possible">calculating...</span><br/>
-        Percentage Interactions: <span id="percentage">0</span>%<br/>
+      Active Interactions: <span id="interactions">0</span><br/>
+      Potential Interactions: <span id="possible">0</span><br/>
+      Percentage Interactions: <span id="percentage">0</span>%<br/>
     </div>
 
-    <div id="cy"></div>
-
+    <div id="explain">
+      <p>
+        Suppose you have a collection of extreme extroverts (want all possible social interactions) and extreme introverts (want zero social interactions). 
+        At every timestep, 
+      </p>
+      <ul>
+        <li>each extrovert seeks out somebody with whom he does not have a relationship and creates one.
+        <li>each introvert seeks out somebody with whom he has a relationship and destroys it.
+      </ul>
+      <p>
+        With slight imbalances in the extrovert-introvert ratio, the equilibrium % of possible relationships varies wildly.
+      </p>
+      <p>
+        We sometimes ignore in the potential relationships the trivial steady-state relationships within extrovert-only communities (all possible) and introvert-only communities (none).
+      </p>
+    </div>
+    <div id="cy"></div> 
   </body>
-
 </html>
 
